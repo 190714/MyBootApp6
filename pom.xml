@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>jp.te4a.spring.boot</groupId>
-	<artifactId>MyBootApp9</artifactId>
+	<artifactId>MyBootApp10</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MyBootApp9</name>
+	<name>MyBootApp10</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -32,12 +32,27 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		
+	<!-- h2からmysqlに変更 -->
+	<!--  -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+	<!-- next-task  ③MySQL接続情報を設定 -->
+	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			  <groupId>mysql</groupId>
+			  <artifactId>mysql-connector-java</artifactId>
+			  <version>8.0.23</version>
+			  <scope>runtime</scope>
+		</dependency>
 	
+		<dependency>
+			  <groupId>org.springframework.boot</groupId>
+			  <artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
 		<!-- 以下変更場所 -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -48,14 +63,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
-		<!-- jsp削除により以下削除
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		-->
 		
 		<!-- 以上変更場所 -->
 

@@ -9,7 +9,7 @@
 	<body>
 	
 	<!-- 以下つけたし-->
-	<form th:action="@{/books/create}" method="post">
+	<form th:action="@{/book/create}" method="post">
 	<table>
 		<tr><td>タイトル:	</td><td><input type="text" name="title" /></td></tr>
 		<tr><td>著者：	</td><td><input type="text" name="writter" /></td></tr>
@@ -22,7 +22,7 @@
 	<!-- -->
 	
 	<table>
-		<tr th:each="book : ${books}">
+		<tr th:each="book : ${book}">
 			<td th:text="${book.id}">		100		</td>
 			<td th:text="${book.title}">	タイトルＡ	</td>
 			<td th:text="${book.writter}">	著者Ａ	</td>
@@ -31,14 +31,14 @@
 			
 			<!--以下つけたし-->
 			<td>
-				<form th:action="@{/books/edit}" method="post">
+				<form th:action="@{/book/edit}" method="post">
 					<input type="submit" name="form" value="編集" />
 					<input type="hidden" name="id" th:value="${book.id}"/>
 				</form>
 			</td>
 			
 			<td>
-				<form th:action="@{/books/delete}" method="post">
+				<form th:action="@{/book/delete}" method="post">
 				<input type="submit" name="form" value="削除" />
 				<input type="hidden" name="id" th:value="${book.id}"/>
 				</form>
@@ -48,7 +48,7 @@
 		</tr>
 	</table>
 	
-	<form th:action="@{/books/list}" method="post">
+	<form th:action="@{/book/list}" method="post">
 		<table>
 			<tr><td>ID:		</td><td><input type="text" name="id" />		</td></tr>
 			<tr><td>タイトル:	</td><td><input type="text" name="title" />		</td></tr>
