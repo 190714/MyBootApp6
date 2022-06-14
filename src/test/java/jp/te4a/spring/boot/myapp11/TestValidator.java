@@ -31,14 +31,17 @@ public class TestValidator implements ConstraintValidator<TestValid,String>{
 	@NoArgsConstructor
 	public class BookForm {
 		private Integer id ;
+		
 		@NotNull
 		@Size(min = 3)
-		@TestValid(param = 
-		"abc")
+		@TestValid(param = "abc")
 		private String title;
+					
 		@Size(min = 3, max = 20)
 		private String writter;
+		
 		private String publisher;
+		
 		@Min(0)
 		private Integer price;
 	}
