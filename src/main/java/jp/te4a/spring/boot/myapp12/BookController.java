@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp11;
+package jp.te4a.spring.boot.myapp12;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,13 +29,6 @@ public class BookController {
 		return "book/list";
 	}
 
-	/*
-		@PostMapping(path="create")
-		String create(BookForm form, Model mode) {
-			bookService.create(form);
-			return "redirect:/book";
-		}↓
-	 */
 	@PostMapping(path="create")
 	String create(@Validated BookForm form, BindingResult result , Model model) {
 		if(result.hasErrors()) {
@@ -65,13 +58,6 @@ public class BookController {
 		bookService.update(form);
 		return "redirect:/book";
 	}
-/*
-	@PostMapping(path = "edit")
-	String edit(@RequestParam Integer id, BookForm form) {
-		bookService.update(form);
-		return "redirect:/book";
-	}
-	*/
 	
 	@PostMapping(path = "delete")
 	String delete(@RequestParam Integer id) {

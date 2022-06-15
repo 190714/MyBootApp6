@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp11;
+package jp.te4a.spring.boot.myapp12;
 
 //import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,18 +13,18 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class TestValidator implements ConstraintValidator<TestValid,String>{
+public class WritterValidator implements ConstraintValidator<WritterValid,String>{
 
-	String param;
+	String ok;
 	@Override
-	public void initialize(TestValid nv){ param = nv.param(); }
+	public void initialize(WritterValid nv){  ok = nv.ok(); }
 	@Override
 	public boolean isValid(String in,ConstraintValidatorContext cxt){
 		if(in == null){
 			return false;
 		}
-		System.out.println(in.equals(param));
-		return !in.equals(param);
+		System.out.println(in.equals(ok));
+		return !in.equals(ok);
 	}
 
 }
