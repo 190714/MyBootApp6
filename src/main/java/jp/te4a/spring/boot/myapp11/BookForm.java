@@ -4,18 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/*
-@Data
-@NoArgsConstructor
-public class BookForm {
-	private Integer id ;
-	private String title;
-	private String writter;
-	private String publisher;
-	private Integer price;
-}
- */
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -26,10 +14,12 @@ public class BookForm {
 	private Integer id ;
 	@NotNull
 	@Size(min = 3)
+	@TestValid(param = "abc")
 	private String title;
 	@Size(min = 3, max = 20)
 	private String writter;
 	private String publisher;
 	@Min(0)
 	private Integer price;
+
 }

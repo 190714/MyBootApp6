@@ -7,9 +7,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jp.te4a.spring.boot.myapp11.BookBean;
-import jp.te4a.spring.boot.myapp11.BookForm;
-
 @Service
 public class BookService {
 	@Autowired
